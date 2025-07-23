@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Liste de Tâches</title>
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">
+                    <i class="fas fa-tasks"></i>
+                    Ma Liste de Tâches
+                </h1>
+                <div class="stats">
+                    <span class="stat-item">
+                        <span class="stat-number" id="totalTasks">0</span>
+                        <span class="stat-label">Total</span>
+                    </span>
+                    <span class="stat-item">
+                        <span class="stat-number" id="completedTasks">0</span>
+                        <span class="stat-label">Terminées</span>
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="task-form-container">
+                <form id="taskForm" class="task-form">
+                    <div class="input-group">
+                        <input 
+                            type="text" 
+                            id="taskInput" 
+                            placeholder="Ajouter une nouvelle tâche..." 
+                            class="task-input"
+                            maxlength="100"
+                        >
+                        <button type="submit" class="add-button">
+                            <i class="fas fa-plus"></i>
+                            Ajouter
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-list"></i>
+                    Toutes
+                </button>
+                <button class="filter-btn" data-filter="active">
+                    <i class="fas fa-clock"></i>
+                    En cours
+                </button>
+                <button class="filter-btn" data-filter="completed">
+                    <i class="fas fa-check"></i>
+                    Terminées
+                </button>
+            </div>
+
+            <div class="tasks-container">
+                <ul id="tasksList" class="tasks-list"></ul>
+                
+                <div id="emptyState" class="empty-state">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h3>Aucune tâche pour le moment</h3>
+                    <p>Ajoutez votre première tâche ci-dessus pour commencer !</p>
+                </div>
+            </div>
+
+            <div class="actions-bar">
+                <button id="clearCompleted" class="action-btn secondary">
+                    <i class="fas fa-trash"></i>
+                    Supprimer les terminées
+                </button>
+                <button id="clearAll" class="action-btn danger">
+                    <i class="fas fa-trash-alt"></i>
+                    Tout supprimer
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="src/js/main.js"></script>
+</body>
+</html>
